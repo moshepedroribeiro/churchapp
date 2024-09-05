@@ -1,0 +1,25 @@
+default: &default
+  variables:
+    statement_timeout: 5s
+  host: 0.0.0.0
+  adapter: postgresql
+  encoding: unicode
+  password: postgres
+  user: postgres
+  connect_timeout: 5
+  read_timeout: 5
+
+development:
+  <<: *default
+  database: church
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: church_test
+
+production:
+  <<: *default
+  database: church_production
