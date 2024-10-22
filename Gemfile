@@ -17,7 +17,6 @@ gem 'puma', '~> 6.4.2'
 gem 'rack'
 gem 'redis', '~> 5.2.0'
 gem 'simple_form', '~> 5.3.0'
-# gem 'apartment', '~> 2.0.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
