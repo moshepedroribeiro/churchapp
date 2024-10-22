@@ -7,7 +7,7 @@ ruby '3.3.2'
 gem 'devise'
 gem 'importmap-rails'
 gem 'pg', '>= 1.5.6'
-gem 'rails', '~> 7.1.3.4'
+gem 'rails', '~> 7.2.1'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
@@ -17,6 +17,7 @@ gem 'puma', '~> 6.4.2'
 gem 'rack'
 gem 'redis', '~> 5.2.0'
 gem 'simple_form', '~> 5.3.0'
+# gem 'apartment', '~> 2.0.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
