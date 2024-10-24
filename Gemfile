@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.3.2'
-gem 'devise'
 gem 'importmap-rails'
 gem 'pg', '>= 1.5.6'
 gem 'rails', '~> 7.2.1'
@@ -70,3 +69,5 @@ group :test do
 end
 
 gem "dartsass-rails", "~> 0.5.1"
+
+gem "devise", "~> 4.9"
