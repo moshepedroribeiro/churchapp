@@ -497,7 +497,7 @@ DEPENDENCIES
   cuprite
   dartsass-rails (~> 0.5.1)
   debug
-  devise
+  devise (~> 4.9)
   dotenv-rails
   erb_lint
   factory_bot_rails
