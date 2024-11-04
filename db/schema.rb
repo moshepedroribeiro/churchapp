@@ -10,9 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_24_023006) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_03_234945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "church_user_addresses", force: :cascade do |t|
+    t.bigint "church_user_id", null: false
+    t.string "street"
+    t.string "neighborhood"
+    t.string "zip"
+    t.string "number"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["church_user_id"], name: "index_church_user_addresses_on_church_user_id"
+  end
+
+  create_table "church_user_contacts", force: :cascade do |t|
+    t.bigint "church_user_id", null: false
+    t.string "email"
+    t.string "phone"
+    t.string "cellphone"
+    t.string "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["church_user_id"], name: "index_church_user_contacts_on_church_user_id"
+  end
 
   create_table "church_users", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +64,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_24_023006) do
     t.datetime "activated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "schema_name"
   end
 
   create_table "company_addresses", force: :cascade do |t|
@@ -66,6 +92,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_24_023006) do
     t.index ["company_id"], name: "index_company_contacts_on_company_id"
   end
 
+  add_foreign_key "church_user_addresses", "church_users"
+  add_foreign_key "church_user_contacts", "church_users"
   add_foreign_key "company_addresses", "companies"
   add_foreign_key "company_contacts", "companies"
 end
