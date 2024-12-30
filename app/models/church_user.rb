@@ -6,4 +6,5 @@ class ChurchUser < ApplicationRecord
 
   has_many :church_user_addresses
   has_many :church_user_contacts
+  belongs_to :company
 end

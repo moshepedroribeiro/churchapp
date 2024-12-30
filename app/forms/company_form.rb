@@ -10,6 +10,8 @@ class CompanyForm < BaseForm
   validates :password_confirmation, comparison: { equal_to: :password, message: 'Password Not Matches' }
 
   def submit
-    CompanyContact.create(email:, phone:, company: Company.create(name:, legal_id:))
+    company = Company.new(name:, legal_id:)
+    company.company_contacts.build(email:, phone:)
+    company.save
   end
 end

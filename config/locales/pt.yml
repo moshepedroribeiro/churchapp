@@ -1,0 +1,30 @@
+pt:
+  activemodel:
+    attributes:
+      registration_form:
+        church_name: Nome da Instituição
+        church_legal_id: CNPJ
+        user_email: E-mail
+        user_name: Nome
+        user_password: Senha
+        user_password_confirmation: Confirmação de senha
+    errors:
+      models:
+        registration_form:
+          attributes:
+            base:
+              church_legal_id:
+                invalid: CNPJ inválido
+              user_email:
+                invalid: E-mail inválido
+              user_password:
+                confirmation: As senhas não conferem
+                too_short: Senha muito curta
+              user_password_confirmation:
+                confirmation: As senhas não conferem
+  email: E-mail
+  forgot_password: Esqueci minha senha
+  password: Senha
+  remember_me: Lembrar credenciais
+  sign_in: Entrar
+  sign_up: Criar nova conta

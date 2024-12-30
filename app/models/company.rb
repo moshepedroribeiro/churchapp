@@ -1,6 +1,7 @@
 class Company < ApplicationRecord
   has_many :company_addresses
   has_many :company_contacts
+  has_many :church_users
 
   before_create :generate_schema
 

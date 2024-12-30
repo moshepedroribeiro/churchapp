@@ -1,4 +1,8 @@
 class BaseForm
+  include ActiveModel::Model
+  include ActiveModel::Attributes
+  include ActiveModel::Dirty
+  include ActiveModel::Validations::Callbacks
 
   def save
     return false unless valid?(persisted? ? :update : :create)
