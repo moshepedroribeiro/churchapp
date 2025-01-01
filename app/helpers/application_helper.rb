@@ -1,4 +1,6 @@
 module ApplicationHelper
+  ALERT_TYPES = %i[success info warning danger].freeze
+
   def bootstrap_flash(safe: false)
     capture do
       error_types = %i[alert error]

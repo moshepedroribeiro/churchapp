@@ -1,38 +1,36 @@
-<%= form_with(url: registrations_path) do |f| %>
-  <div class="d-flex flex-column align-items-center justify-content-center bg-light w-100 vh-100">
-    <div class="my-5 small-shadow bg-white rounded" style="max-width: 400px;">
-      <div class="text-center py-3">
-        <h2 class="h4"><%= I18n.t('.sign_up') %></h2>
-      </div>
+<%= form_with(url: registrations_path, class: 'd-flex flex-column align-items-center justify-content-center w-100 vh-100') do |f| %>
+  <div class="my-4 small-shadow bg-light rounded w-50">
+    <div class="text-center py-3">
+      <h2 class="h4"><%= I18n.t('.sign_up') %></h2>
+    </div>
 
-      <div class="px-4 pb-4">
-        <label for="church_name" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.church_name') %></label>
-        <%= f.text_field :church_name, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.church_name') %>
-      </div>
+    <div class="px-4 pb-4">
+      <label for="church_name" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.church_name') %></label>
+      <%= f.text_field :church_name, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.church_name') %>
+    </div>
 
-      <div class="px-4 pb-4">
-        <label for="user_name" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.user_name') %></label>
-        <%= f.text_field :user_name, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.user_name') %>
-      </div>
+    <div class="px-4 pb-4">
+      <label for="user_name" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.user_name') %></label>
+      <%= f.text_field :user_name, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.user_name') %>
+    </div>
 
-      <div class="px-4 pb-4">
-        <label for="user_email" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.user_email') %></label>
-        <%= f.email_field :user_email, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.user_email'), type: :email %>
-      </div>
+    <div class="px-4 pb-4">
+      <label for="user_email" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.user_email') %></label>
+      <%= f.email_field :user_email, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.user_email'), type: :email %>
+    </div>
 
-      <div class="px-4 pb-4">
-        <label for="user_password" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.user_password') %></label>
-        <%= f.password_field :user_password, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.user_password') %>
-      </div>
+    <div class="px-4 pb-4">
+      <label for="user_password" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.user_password') %></label>
+      <%= f.password_field :user_password, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.user_password'), minlength: 6 %>
+    </div>
 
-      <div class="px-4 pb-4">
-        <label for="user_password_confirmation" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.user_password_confirmation') %></label>
-        <%= f.password_field :user_password_confirmation, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.user_password_confirmation') %>
-      </div>
+    <div class="px-4 pb-4">
+      <label for="user_password_confirmation" class="form-label"><%= I18n.t('.activemodel.attributes.registration_form.user_password_confirmation') %></label>
+      <%= f.password_field :user_password_confirmation, class: 'form-control', placeholder: I18n.t('.activemodel.attributes.registration_form.user_password_confirmation'), minlength: 6 %>
+    </div>
 
-      <div class="px-4 pb-4 text-center">
-        <%= f.submit I18n.t('.sign_in'), class: "btn btn-primary btn-block text-center w-100" %>
-      </div>
+    <div class="px-4 pb-4 text-center">
+      <%= f.submit I18n.t('.sign_in'), class: "btn btn-primary btn-block text-center w-100" %>
     </div>
   </div>
 <% end %>

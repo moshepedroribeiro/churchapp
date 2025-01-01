@@ -1,7 +1,4 @@
 class RegistrationsController < ApplicationController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
-
   # GET /resource/sign_up
   def new
     @registration_form = RegistrationForm.new
@@ -15,8 +12,7 @@ class RegistrationsController < ApplicationController
       flash[:notice] = 'Usuário criado com sucesso'
       redirect_to new_user_session_path
     else
-      p @registration_form.errors.full_messages.join(', ')
-      flash[:error] = @registration_form.errors.full_messages.join(', ')
+      flash[:error] = @registration_form.errors.full_messages.to_sentence
       render :new, status: :unprocessable_entity
     end
   end
